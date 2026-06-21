@@ -1,0 +1,164 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> AI Looks Easy Until You Put It in a Robot | Hieu Pham Dinh </title> <meta name="author" content="Hieu Pham Dinh"> <meta name="description" content="Five assumptions about AI that began to fall apart when I started working with robots in the real world."> <meta name="keywords" content="artificial intelligence, machine learning, robotics, multimodal AI, agentic AI, reinforcement learning, data science"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://dinhieufam.github.io/blog/2026/ai-looks-easy-until-you-put-it-in-a-robot/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Hieu</span> Pham Dinh </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post blog-article"> <header class="post-header blog-hero"> <h1 class="post-title">AI Looks Easy Until You Put It in a Robot</h1> <p class="blog-description">Five assumptions about AI that began to fall apart when I started working with robots in the real world.</p> <div class="blog-metadata"> <div class="blog-metadata-item"> <span class="blog-metadata-label">Author</span> <strong>Hieu Pham Dinh</strong> </div> <div class="blog-metadata-item"> <span class="blog-metadata-label">Affiliation</span> <span>VinUniversity</span> </div> <div class="blog-metadata-item"> <span class="blog-metadata-label">Published</span> <time datetime="2026-06-21T20:15:00+00:00">June 21, 2026</time> </div> </div> <p class="post-tags blog-tags"> <a href="/blog/tag/robotics"><i class="fa-solid fa-hashtag fa-sm"></i> robotics</a>  <a href="/blog/tag/artificial-intelligence"><i class="fa-solid fa-hashtag fa-sm"></i> artificial-intelligence</a>  <a href="/blog/tag/sim-to-real"><i class="fa-solid fa-hashtag fa-sm"></i> sim-to-real</a>  <a href="/blog/tag/robot-learning"><i class="fa-solid fa-hashtag fa-sm"></i> robot-learning</a>   ·   <a href="/blog/category/machine-learning"><i class="fa-solid fa-tag fa-sm"></i> machine-learning</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <p>A few years ago, my mental model of AI was surprisingly simple.</p> <p>If a system was not performing well, it probably needed one of three things:</p> <ul> <li>more data;</li> <li>a better model; or</li> <li>more compute.</li> </ul> <p>After all, this seemed to be the story of modern AI. Larger datasets produced better models. Larger models produced better results. More compute unlocked capabilities that had previously seemed impossible.</p> <p>Then I started spending more time working in robotics, and many of my assumptions slowly began to break.</p> <p>They were not completely wrong. Reality was simply much messier than I expected.</p> <h2 id="assumption-1-more-data-solves-most-problems">Assumption 1: More data solves most problems</h2> <p>For a long time, I believed that enough data could solve almost anything. The success of deep learning seemed to support this idea.</p> <p>Need better performance? Collect more examples. Train longer. Scale up.</p> <p>Then I encountered robotics.</p> <p>The first surprise was how difficult data collection actually is. On the internet, a vast amount of data already exists. In robotics, you often have to create each useful experience yourself.</p> <p>Every demonstration takes time. Every experiment requires setup. Every failure has a cost. A robot may collide with something, a sensor may fail, or an entire day of experiments may produce almost nothing useful.</p> <p>The bottleneck is no longer only training. It is gathering diverse, high-quality experiences from the real world—and doing so safely, consistently, and at a useful scale.</p> <p>Suddenly, “just get more data” does not sound so simple.</p> <h2 id="assumption-2-simulation-is-close-enough">Assumption 2: Simulation is close enough</h2> <p>When I first saw robotic simulation, I was amazed: controlled environments, unlimited experiments, fast iteration, and no broken hardware. It felt like the ideal solution.</p> <p>Then I learned about the <strong>reality gap</strong>.</p> <p>A policy that performs beautifully in simulation can fail almost immediately in the real world. Friction differs. Lighting changes. Sensors are noisy. Objects are slightly misplaced. Actuators have delays and imperfections. Details that seem insignificant in simulation can determine whether a real system succeeds.</p> <p>Techniques such as domain randomization and system identification can narrow this gap, but they do not make it disappear. Every simulator is still an approximation.</p> <p>I have come to appreciate how much of robotics is about handling imperfections. Reality refuses to behave exactly like our models.</p> <p>If it were easy to simulate perfectly, robotics would probably already be solved.</p> <h2 id="assumption-3-intelligence-is-the-hard-part">Assumption 3: Intelligence is the hard part</h2> <p>This one surprised me the most.</p> <p>Before working in robotics, I assumed intelligence would be the primary challenge: planning, reasoning, and decision-making. Those seemed like the difficult pieces.</p> <p>In practice, I have spent far more time dealing with everything around intelligence:</p> <ul> <li>sensors and calibration;</li> <li>coordinate frames and transformations;</li> <li>synchronization and latency;</li> <li>control loops;</li> <li>communication failures;</li> <li>data pipelines; and</li> <li>hardware issues.</li> </ul> <p>The robot might know what to do and still fail because a camera dropped frames, two clocks drifted apart, or a coordinate transform was wrong.</p> <p>Many robotics failures are not failures of intelligence. They are failures of integration.</p> <p>The more I work on real systems, the more I realize that intelligence is only one component of capability. A strong model inside a fragile system is still a fragile system.</p> <h2 id="assumption-4-benchmarks-reflect-real-progress">Assumption 4: Benchmarks reflect real progress</h2> <p>Like many researchers, I enjoy reading benchmark results. They provide measurable progress, clear comparisons, and simple leaderboards.</p> <p>But robots do not care about benchmarks.</p> <p>A robot operating in the real world faces uncertainty that rarely appears in an evaluation dataset. Humans move unpredictably. Objects are not where they are supposed to be. Environments change. Sensors degrade. Rare failures eventually stop being rare when a system runs for long enough.</p> <p>A model that achieves 99% performance under controlled evaluation may still be unsafe or unreliable in deployment.</p> <p>Working in robotics has made me value robustness far more than raw performance. Average-case accuracy matters, but so do failure recovery, uncertainty awareness, latency, consistency, and graceful degradation.</p> <p>The best system is not always the smartest one. Sometimes it is the one that keeps working when everything goes wrong.</p> <h2 id="assumption-5-ai-is-mostly-about-models">Assumption 5: AI is mostly about models</h2> <p>This may be the biggest lesson of all.</p> <p>When people discuss AI, the conversation often revolves around architectures: transformers, diffusion models, world models, reasoning models, new papers, new benchmarks, and new scaling laws.</p> <p>Building real systems has taught me that progress often comes from less glamorous places:</p> <ul> <li>better datasets;</li> <li>better infrastructure;</li> <li>better evaluation;</li> <li>better interfaces between components; and</li> <li>better engineering.</li> </ul> <p>The model matters, but it is rarely the entire story. Sometimes it is not even the most important part.</p> <h2 id="why-robotics-changed-my-perspective">Why robotics changed my perspective</h2> <p>I still believe AI is advancing rapidly. I still get excited about new models and research breakthroughs. Robotics has simply given me a different lens through which to view progress.</p> <p>Language models primarily operate in a world represented through tokens. Robots must operate in the physical world—a world that is noisy, unpredictable, partially observable, and stubbornly resistant to simplification.</p> <p>Reality does not care about your benchmark score. It does not care about your training loss. It simply presents another edge case and waits to see what happens.</p> <p>That is what makes robotics so fascinating.</p> <p>Every experiment is a reminder that intelligence is not merely about producing the right answer. It is about perceiving, deciding, and acting successfully in a world that refuses to stay still.</p> <p>The more I work in robotics, the more I realize how much we still have left to learn.</p> </div> </article> </div> <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebarColumn = document.querySelector('.container[role="main"] > .row:has(#toc-sidebar) > .col-sm-3');
+    const articleBody = document.querySelector('.blog-article .post-content');
+    if (sidebarColumn && articleBody) {
+      sidebarColumn.style.paddingTop = `${articleBody.offsetTop}px`;
+    }
+
+    document.querySelectorAll('.blog-article #markdown-content p').forEach((paragraph) => {
+      const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+      const firstText = walker.nextNode();
+      if (firstText && firstText.textContent.trimStart().startsWith('####### ')) {
+        firstText.textContent = firstText.textContent.replace(/^\s*#######\s+/, '');
+        paragraph.classList.add('blog-callout');
+      }
+    });
+  });
+</script> </div> </div> </div> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "In reverse chronological order. You can also visit my Google Scholar profile for more details.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Education, research experience, publications, awards, and selected projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-ai-looks-easy-until-you-put-it-in-a-robot",
+        
+          title: "AI Looks Easy Until You Put It in a Robot",
+        
+        description: "Five assumptions about AI that began to fall apart when I started working with robots in the real world.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ai-looks-easy-until-you-put-it-in-a-robot/";
+          
+        },
+      },{id: "post-why-everyone-is-talking-about-world-models-thoughts-from-someone-without-100-000-gpus",
+        
+          title: "Why Everyone Is Talking About World Models — Thoughts From Someone Without 100,000...",
+        
+        description: "A personal take on the rise of world models, why frontier labs are investing in them, and where smaller teams can still build meaningful things.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/why-everyone-is-talking-about-world-models/";
+          
+        },
+      },{id: "news-placed-in-the-top-10-at-the-dataflow-competition-with-a-project-on-forecasting-business-performance-https-github-com-dinhieufam-forecasting-business-performance",
+          title: 'Placed in the top 10 at the DataFlow competition with a project on...',
+          description: "",
+          section: "News",},{id: "news-became-co-president-of-vintelligence-https-www-facebook-com-vintelligencevinuni-vinuniversity-39-s-ai-and-data-science-club",
+          title: 'Became Co-President of [VinTelligence](https://www.facebook.com/vintelligencevinuni), VinUniversity&amp;#39;s AI and Data Science club.',
+          description: "",
+          section: "News",},{id: "news-named-to-the-vinuniversity-dean-39-s-list-for-academic-excellence-for-ay-2024-2025",
+          title: 'Named to the VinUniversity Dean&amp;#39;s List for Academic Excellence for AY 2024–2025.',
+          description: "",
+          section: "News",},{id: "news-received-a-consolation-prize-in-the-regional-round-of-the-ai-olympiad-for-undergraduate-students-including-a-top-two-national-performance-in-the-word-translation-task",
+          title: 'Received a Consolation Prize in the Regional Round of the AI Olympiad for...',
+          description: "",
+          section: "News",},{id: "news-presented-a-poster-at-open-innovation-conference-2025-https-oic-vinuni-edu-vn-workshop-on-digital-twin-for-greener-and-healthier-indoor-spaces",
+          title: 'Presented a poster at [Open Innovation Conference 2025](https://oic.vinuni.edu.vn/), Workshop on Digital Twin for...',
+          description: "",
+          section: "News",},{id: "news-started-as-a-research-intern-at-knovel-engineering-https-knoveleng-com-about-us-working-on-multimodal-learning-and-vision-language-action-modeling-in-medical-and-surgical-contexts",
+          title: 'Started as a Research Intern at [Knovel Engineering](https://knoveleng.com/about-us/), working on multimodal learning and...',
+          description: "",
+          section: "News",},{id: "projects-finlove",
+          title: 'FinLove',
+          description: "An intelligent portfolio construction and analysis platform combining quantitative finance, forecasting, and retrieval-augmented generation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_finlove/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%32%34%68%69%65%75.%70%64@%76%69%6E%75%6E%69.%65%64%75.%76%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/dinhieufam", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/dinhieufam", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=IVHIqhkAAAAJ", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

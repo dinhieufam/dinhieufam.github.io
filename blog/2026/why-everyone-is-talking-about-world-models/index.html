@@ -1,0 +1,164 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Why Everyone Is Talking About World Models — Thoughts From Someone Without 100,000 GPUs | Hieu Pham Dinh </title> <meta name="author" content="Hieu Pham Dinh"> <meta name="description" content="A personal take on the rise of world models, why frontier labs are investing in them, and where smaller teams can still build meaningful things."> <meta name="keywords" content="artificial intelligence, machine learning, robotics, multimodal AI, agentic AI, reinforcement learning, data science"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://dinhieufam.github.io/blog/2026/why-everyone-is-talking-about-world-models/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Hieu</span> Pham Dinh </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post blog-article"> <header class="post-header blog-hero"> <h1 class="post-title">Why Everyone Is Talking About World Models — Thoughts From Someone Without 100,000 GPUs</h1> <p class="blog-description">A personal take on the rise of world models, why frontier labs are investing in them, and where smaller teams can still build meaningful things.</p> <div class="blog-metadata"> <div class="blog-metadata-item"> <span class="blog-metadata-label">Author</span> <strong>Hieu Pham Dinh</strong> </div> <div class="blog-metadata-item"> <span class="blog-metadata-label">Affiliation</span> <span>VinUniversity</span> </div> <div class="blog-metadata-item"> <span class="blog-metadata-label">Published</span> <time datetime="2026-06-21T17:00:00+00:00">June 21, 2026</time> </div> </div> <p class="post-tags blog-tags"> <a href="/blog/tag/world-models"><i class="fa-solid fa-hashtag fa-sm"></i> world-models</a>  <a href="/blog/tag/artificial-intelligence"><i class="fa-solid fa-hashtag fa-sm"></i> artificial-intelligence</a>  <a href="/blog/tag/robotics"><i class="fa-solid fa-hashtag fa-sm"></i> robotics</a>  <a href="/blog/tag/foundation-models"><i class="fa-solid fa-hashtag fa-sm"></i> foundation-models</a>   ·   <a href="/blog/category/machine-learning"><i class="fa-solid fa-tag fa-sm"></i> machine-learning</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <p>Over the past few months, I have noticed a shift in conversations about AI.</p> <p>A year or two ago, everyone seemed to be talking about larger language models: more parameters, more tokens, and more benchmarks. Today, it feels like everyone is talking about <strong>world models</strong>.</p> <p>Every week brings new papers, startups, and research directions built around the idea that AI should not merely process descriptions of reality, but develop some internal representation of how reality behaves.</p> <p>At first, I found the excitement a little confusing. Language models already feel magical. They can write code, answer questions, summarize books, and help design software. Why is the industry suddenly obsessed with something else?</p> <p>The more I read, the more I think the appeal comes down to a simple distinction:</p> <blockquote> <p>Language models primarily learn from descriptions of the world. World models aim to learn how the world changes.</p> </blockquote> <p>That is a much bigger ambition.</p> <blockquote> <p>A note on terminology: “world model” is a broad and sometimes loosely used term. Here, I mean a model that learns representations of an environment, predicts how it may evolve, and helps an agent reason about the consequences of actions.</p> </blockquote> <h2 id="the-dream-generating-futures-not-just-words">The dream: generating futures, not just words</h2> <p>Imagine asking an AI:</p> <blockquote> <p>What is likely to happen if I make this business decision?</p> </blockquote> <p>Or:</p> <blockquote> <p>What happens if this robot takes two steps forward and pushes that object?</p> </blockquote> <p>Or:</p> <blockquote> <p>What are the likely outcomes of this scientific experiment?</p> </blockquote> <p>Current language models can produce plausible answers, often by drawing on patterns expressed in their training data. A world model aims to do something deeper: form an internal representation of a situation, simulate possible transitions, and predict what may happen next.</p> <p>In that sense, it is less about generating words and more about generating futures.</p> <p>If language models are autocomplete for text, world models aspire to become autocomplete for reality.</p> <h2 id="why-frontier-labs-care-so-much">Why frontier labs care so much</h2> <p>I see two main reasons.</p> <h3 id="capability">Capability</h3> <p>Many of the hardest AI problems require understanding how actions lead to consequences:</p> <ul> <li>robotics;</li> <li>autonomous driving;</li> <li>scientific discovery;</li> <li>embodied agents; and</li> <li>long-horizon planning.</li> </ul> <p>These problems are difficult because the model must reason about environments that change over time. Producing convincing language is not enough. An effective system needs to anticipate motion, uncertainty, interaction, failure, and the downstream effects of its own decisions.</p> <h3 id="data-and-scaling">Data and scaling</h3> <p>The supply of high-quality human-written text is large but not unlimited. As language models consume more of it, simply adding more text and computation may deliver diminishing returns.</p> <p>The physical and digital worlds, however, continuously produce new signals: videos, interactions, sensor readings, experiments, simulations, and human behavior. These sources are not automatically useful—collecting and curating them is difficult—but they offer a training signal far richer than text alone.</p> <p>From the perspective of a frontier lab, learning from those signals is an obvious direction to explore.</p> <h2 id="the-part-that-makes-me-uneasy">The part that makes me uneasy</h2> <p>Whenever I read about world models, I get excited.</p> <p>Then I remember who is building them.</p> <p>The organizations leading this race have access to resources that most people can barely imagine: massive GPU clusters, proprietary datasets, specialized research teams, robot fleets, and vehicles collecting data every second.</p> <p>When I see a paper trained on millions of video clips or a system requiring enormous computational resources, I sometimes wonder: <strong>what does this mean for the rest of us?</strong></p> <p>Independent developers, hobbyists, students, university labs, and small startups are not operating on the same playing field. That is not necessarily a reason to give up, but it should change how we think about participating in the future of AI.</p> <h2 id="we-probably-will-not-train-the-next-frontier-world-model">We probably will not train the next frontier world model</h2> <p>This is something I have gradually accepted.</p> <p>I probably will not train the next frontier world model. Most people reading this probably will not either.</p> <p>That is not because we are less capable. The economics are simply different.</p> <p>The cost of collecting data, running experiments, and training these systems is becoming concentrated among a small number of organizations. The gap between <strong>using AI</strong>, <strong>researching AI</strong>, and <strong>building frontier foundation models</strong> continues to grow.</p> <p>Sometimes, I think people underestimate how much those distinctions matter. Reading a paper and reproducing it are very different tasks. Reproducing it and competing with the original lab are further apart still.</p> <h2 id="but-history-gives-me-hope">But history gives me hope</h2> <p>Fortunately, this pattern is not unique to AI.</p> <p>The organizations that built internet infrastructure were not the only ones that created value on top of it. Smartphone manufacturers were not the only winners of the mobile revolution. Most successful software companies do not build operating systems; they build products using them.</p> <p>I suspect something similar will happen with world models.</p> <p>The foundational layer may belong to a relatively small number of organizations. The opportunity layer above it could be much larger.</p> <p>That is where most builders can contribute.</p> <h2 id="where-small-teams-still-matter">Where small teams still matter</h2> <p>If I were starting something today, I would not try to compete directly with the largest AI labs. I would look for leverage instead.</p> <ul> <li>Can I build better tools around these models?</li> <li>Can I adapt them to a domain the foundation-model lab does not understand deeply?</li> <li>Can I create a workflow that makes the technology reliable and useful?</li> <li>Can I solve a real problem for a specific group of users?</li> <li>Can I evaluate these systems more honestly or make them safer to deploy?</li> </ul> <p>Small teams can often move faster, understand narrow problems better, and stay closer to users. They may not own the foundational model, but they can still own the context, interface, data pipeline, evaluation process, or product that makes the model valuable.</p> <p>The headlines focus on the models. The opportunities often emerge somewhere else.</p> <h2 id="my-current-take">My current take</h2> <p>I think world models matter. They are likely to play an important role in more capable robots, agents, and decision-making systems.</p> <p>I also think they are surrounded by a great deal of hype.</p> <p>Building a model that genuinely understands reality is an extraordinarily difficult problem. The real world is messy. Humans are unpredictable. Physics is complicated. Observations are incomplete. Context matters. Unlike a language benchmark, reality rarely provides a clean score telling us whether a model truly understands what is happening.</p> <p>So I am watching the race with interest, but I am not losing sleep trying to join it at the infrastructure level. I am more interested in understanding where these technologies are heading, what they will make possible, and how smaller builders can use them thoughtfully.</p> <p>If previous technology waves teach us anything, it is this:</p> <blockquote> <p>You do not have to build the foundation to build something meaningful on top of it.</p> </blockquote> <p>For most of us, that may be where the most interesting opportunities are anyway.</p> </div> </article> </div> <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidebarColumn = document.querySelector('.container[role="main"] > .row:has(#toc-sidebar) > .col-sm-3');
+    const articleBody = document.querySelector('.blog-article .post-content');
+    if (sidebarColumn && articleBody) {
+      sidebarColumn.style.paddingTop = `${articleBody.offsetTop}px`;
+    }
+
+    document.querySelectorAll('.blog-article #markdown-content p').forEach((paragraph) => {
+      const walker = document.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+      const firstText = walker.nextNode();
+      if (firstText && firstText.textContent.trimStart().startsWith('####### ')) {
+        firstText.textContent = firstText.textContent.replace(/^\s*#######\s+/, '');
+        paragraph.classList.add('blog-callout');
+      }
+    });
+  });
+</script> </div> </div> </div> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "In reverse chronological order. You can also visit my Google Scholar profile for more details.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Education, research experience, publications, awards, and selected projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-ai-looks-easy-until-you-put-it-in-a-robot",
+        
+          title: "AI Looks Easy Until You Put It in a Robot",
+        
+        description: "Five assumptions about AI that began to fall apart when I started working with robots in the real world.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ai-looks-easy-until-you-put-it-in-a-robot/";
+          
+        },
+      },{id: "post-why-everyone-is-talking-about-world-models-thoughts-from-someone-without-100-000-gpus",
+        
+          title: "Why Everyone Is Talking About World Models — Thoughts From Someone Without 100,000...",
+        
+        description: "A personal take on the rise of world models, why frontier labs are investing in them, and where smaller teams can still build meaningful things.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/why-everyone-is-talking-about-world-models/";
+          
+        },
+      },{id: "news-placed-in-the-top-10-at-the-dataflow-competition-with-a-project-on-forecasting-business-performance-https-github-com-dinhieufam-forecasting-business-performance",
+          title: 'Placed in the top 10 at the DataFlow competition with a project on...',
+          description: "",
+          section: "News",},{id: "news-became-co-president-of-vintelligence-https-www-facebook-com-vintelligencevinuni-vinuniversity-39-s-ai-and-data-science-club",
+          title: 'Became Co-President of [VinTelligence](https://www.facebook.com/vintelligencevinuni), VinUniversity&amp;#39;s AI and Data Science club.',
+          description: "",
+          section: "News",},{id: "news-named-to-the-vinuniversity-dean-39-s-list-for-academic-excellence-for-ay-2024-2025",
+          title: 'Named to the VinUniversity Dean&amp;#39;s List for Academic Excellence for AY 2024–2025.',
+          description: "",
+          section: "News",},{id: "news-received-a-consolation-prize-in-the-regional-round-of-the-ai-olympiad-for-undergraduate-students-including-a-top-two-national-performance-in-the-word-translation-task",
+          title: 'Received a Consolation Prize in the Regional Round of the AI Olympiad for...',
+          description: "",
+          section: "News",},{id: "news-presented-a-poster-at-open-innovation-conference-2025-https-oic-vinuni-edu-vn-workshop-on-digital-twin-for-greener-and-healthier-indoor-spaces",
+          title: 'Presented a poster at [Open Innovation Conference 2025](https://oic.vinuni.edu.vn/), Workshop on Digital Twin for...',
+          description: "",
+          section: "News",},{id: "news-started-as-a-research-intern-at-knovel-engineering-https-knoveleng-com-about-us-working-on-multimodal-learning-and-vision-language-action-modeling-in-medical-and-surgical-contexts",
+          title: 'Started as a Research Intern at [Knovel Engineering](https://knoveleng.com/about-us/), working on multimodal learning and...',
+          description: "",
+          section: "News",},{id: "projects-finlove",
+          title: 'FinLove',
+          description: "An intelligent portfolio construction and analysis platform combining quantitative finance, forecasting, and retrieval-augmented generation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_finlove/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%32%34%68%69%65%75.%70%64@%76%69%6E%75%6E%69.%65%64%75.%76%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/dinhieufam", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/dinhieufam", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=IVHIqhkAAAAJ", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
