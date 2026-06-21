@@ -7,15 +7,13 @@ first_name: Hieu
 middle_name:
 last_name: Pham Dinh
 contact_note: >
-  The best way to reach me is by email. I am always happy to connect,
+  The best way to reach me is by <strong>email</strong>. I am always happy to connect,
   learn, and discuss potential research collaborations.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal academic website of Hieu Pham Dinh, a Data Science undergraduate
   at VinUniversity working on AI for robotics, multimodal learning, agentic AI,
   reinforcement learning, and real-world machine learning systems.
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+footer_text:
 keywords: artificial intelligence, machine learning, robotics, multimodal AI, agentic AI, reinforcement learning, data science
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🤖 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
@@ -285,6 +283,15 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: posts
+    values:
+      author: Hieu Pham Dinh
+      affiliation: VinUniversity
+      toc:
+        sidebar: left
+        collapse: expanded
 
 sass:
   style: compressed
@@ -325,7 +332,7 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["transformers", "nlp", "deep-learning", "attention"] # these tags will be displayed on the front page of your blog
+display_tags: ["robotics", "world-models", "robot-learning", "sim-to-real"] # these tags will be displayed on the front page of your blog
 display_categories: ["machine-learning"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------

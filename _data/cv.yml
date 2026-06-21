@@ -1,8 +1,7 @@
 cv:
   name: Pham Dinh Hieu
-  label: Data Science Undergraduate · AI Researcher
+  label: Undergraduate AI Researcher
   email: 24hieu.pd@vinuni.edu.vn
-  location: Hanoi, Vietnam
   image: ""
   summary: >-
     Data Science undergraduate at VinUniversity pursuing research in AI for robotics,
@@ -19,10 +18,8 @@ cv:
   sections:
     Education:
       - institution: VinUniversity
-        location: Hanoi, Vietnam
         url: https://vinuni.edu.vn/
-        area: Data Science
-        studyType: Bachelor of Science
+        studyType: B.Sc. in Data Science
         start_date: 2024-09
         end_date: Present
         score: 3.86/4.00
@@ -33,7 +30,6 @@ cv:
     Experience:
       - company: Knovel Engineering
         position: Research Intern
-        location: Singapore
         start_date: 2026-02
         end_date: Present
         highlights:
@@ -43,7 +39,6 @@ cv:
 
       - company: VinUniversity
         position: Undergraduate Research Assistant
-        location: Hanoi, Vietnam
         start_date: 2025-11
         end_date: Present
         highlights:
@@ -53,7 +48,6 @@ cv:
 
       - company: V-IndoorCare, Center of Environmental Intelligence
         position: Undergraduate Research Assistant
-        location: VinUniversity, Hanoi, Vietnam
         start_date: 2025-02
         end_date: 2026-03
         highlights:
@@ -62,7 +56,6 @@ cv:
 
       - company: NLP @ VinUniversity
         position: Research Assistant
-        location: Hanoi, Vietnam
         start_date: 2025-03
         end_date: 2025-10
         highlights:
@@ -78,7 +71,7 @@ cv:
           - Hung Nguyen Huy
           - Mo El-Haj
         publisher: Language Resources and Evaluation Conference (LREC)
-        releaseDate: 2026
+        releaseDate: "LREC '26"
         url: https://arxiv.org/abs/2603.05262
 
       - title: "Structured Prompting for Arabic Essay Proficiency: A Trait-Centric Evaluation Approach"
@@ -88,7 +81,7 @@ cv:
           - Mo El-Haj
           - Paul Rayson
         publisher: Language Resources and Evaluation Conference (LREC)
-        releaseDate: 2026
+        releaseDate: "LREC '26"
         url: https://arxiv.org/abs/2603.19668
 
     Awards:
@@ -108,25 +101,3 @@ cv:
         awarder: International Olympiad in Artificial Intelligence
         url: https://ioai-official.org/
         summary: Worked on pill-image classification, PM2.5 forecasting, and biomedical text summarization.
-
-    Projects:
-      - name: "FinLove: Intelligent Portfolio Construction & Analysis Platform"
-        start_date: 2025-10
-        end_date: 2025-12
-        summary: A full-stack portfolio management platform combining quantitative finance, forecasting, and retrieval-augmented generation.
-        highlights:
-          - Implemented Markowitz, Black–Litterman, and CVaR portfolio optimization with Ledoit–Wolf, GLASSO, GARCH, and DCC risk models.
-          - Built an ensemble forecasting pipeline using ARIMA, Prophet, LSTM, and statistical models.
-          - Integrated an LLM-powered RAG system for context-aware explanations of portfolio performance and risk.
-          - "Code: https://github.com/dinhieufam/FinLove"
-
-    Skills:
-      - name: Machine Learning
-        level: Research and applied experience
-        icon: fa-solid fa-code
-        keywords: "Multimodal Learning, Reinforcement Learning, Agentic AI, NLP, LLMs, Vision–Language–Action"
-
-      - name: Engineering
-        level: Full-stack and model deployment
-        icon: fa-solid fa-laptop-code
-        keywords: "Python, FastAPI, Next.js, TensorFlow, LangGraph, CVXPY"

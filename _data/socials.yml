@@ -1,11 +1,5 @@
 # Social links are displayed in the order defined below.
-cv_pdf: /assets/pdf/Academic_CV.pdf
 email: 24hieu.pd@vinuni.edu.vn
 github_username: dinhieufam
 linkedin_username: dinhieufam
 scholar_userid: IVHIqhkAAAAJ
-rss_icon: true
-custom_social:
-  logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
-  title: Hugging Face
-  url: https://huggingface.co/dinhieufam
