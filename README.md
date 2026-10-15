@@ -24,6 +24,7 @@ cv/index.html                 CV page
 assets/js/data.js             ← news, publications, blog list, CV (edit this most)
 assets/js/site.js             Navbar, dark mode, search, rendering (rarely needs edits)
 assets/css/style.css          All styles (colors at the top)
+assets/css/style.original.css Backup of the original (pre-Mark III) theme, not loaded
 assets/img/                   Profile photo, publication preview images
 ```
 
@@ -38,7 +39,8 @@ assets/img/                   Profile photo, publication preview images
 | Update the CV                      | `CV` in `data.js` (Education, Experience, Awards & Honors, Service & Teaching)           |
 | Change email / GitHub / LinkedIn   | `SITE` in `data.js`                                                                      |
 | Change the menu                    | `NAV` at the top of `assets/js/site.js`                                                  |
-| Change the accent color            | `--theme` / `--hover` at the top of `assets/css/style.css`                               |
+| Change the accent color            | `--theme` / `--hover` (and `--gold` trim) at the top of `assets/css/style.css`          |
+| Go back to the original theme      | copy `assets/css/style.original.css` over `assets/css/style.css`                         |
 | Change the profile photo           | replace `assets/img/prof_pic.jpg`                                                        |
 
 The ctrl-k / ⌘-k search builds itself from `data.js`, so you never update it by hand.

@@ -9,39 +9,50 @@
  * ============================================================================= */
 
 /* 1. Colors ------------------------------------------------------------------ */
+/* "Mark III" theme: hot-rod red armor plates with gold trim.
+ * The previous theme is kept in style.original.css (see README to switch back). */
 :root {
   color-scheme: light;
-  --bg: #ffffff;
-  --text: #000000;
-  --text-light: #828282;
-  --theme: #b91c1c; /* accent red */
-  --hover: #991b1b;
-  --divider: rgba(0, 0, 0, 0.1);
-  --section-divider: #d1d5db;
-  --card-bg: #ffffff;
-  --code-bg: rgba(185, 28, 28, 0.05);
-  --input-bg: #ffffff;
-  --input-text: #000000;
-  --back-to-top-bg: rgba(0, 0, 0, 0.4);
-  --back-to-top-text: #ffffff;
+  --bg: #f6f1e8;
+  --text: #1b1716;
+  --text-light: #7a6f66;
+  --theme: #a3101a; /* accent red */
+  --hover: #6e0a11;
+  --gold: #b07d1c; /* trim */
+  --plate: #8e0d15; /* navbar / badge gradient, dark end */
+  --plate-2: #c8161f; /* navbar / badge gradient, light end */
+  --plate-text: #f7e7c6; /* text on red plates */
+  --divider: rgba(60, 20, 10, 0.12);
+  --section-divider: #d9c7a3;
+  --card-bg: #fffaf2;
+  --code-bg: rgba(176, 125, 28, 0.1);
+  --input-bg: #fffaf2;
+  --input-text: #1b1716;
+  --back-to-top-bg: rgba(163, 16, 26, 0.85);
+  --back-to-top-text: #f7e7c6;
   --max-width: 930px;
-  --shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
+  --shadow: 0 2px 0 rgba(0, 0, 0, 0.08), 0 10px 24px -12px rgba(90, 10, 10, 0.45);
+  --heading-font: Rajdhani, Roboto, sans-serif;
 }
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #1c1c1d;
-  --text: #e8e8e8;
-  --text-light: #828282;
-  --theme: #f87171;
-  --hover: #fca5a5;
-  --divider: #424246;
-  --card-bg: #212529;
-  --code-bg: #2c3237;
-  --input-bg: #e8e8e8;
-  --input-text: #1c1c1d;
-  --back-to-top-bg: rgba(255, 255, 255, 0.5);
-  --back-to-top-text: #000000;
+  --bg: #121212;
+  --text: #f0e9dd;
+  --text-light: #9a9086;
+  --theme: #ff3d3d;
+  --hover: #ffb4a8;
+  --gold: #e7b541;
+  --plate: #6b0a10;
+  --plate-2: #a3101a;
+  --divider: #2f2b29;
+  --section-divider: #4a3a1c;
+  --card-bg: #1b1a1a;
+  --code-bg: #24201c;
+  --input-bg: #f0e9dd;
+  --input-text: #121212;
+  --back-to-top-bg: rgba(231, 181, 65, 0.85);
+  --back-to-top-text: #121212;
 }
 
 /* Smooth color fade when the theme toggle is clicked */
@@ -77,10 +88,19 @@ body {
   color: var(--text);
   background-color: var(--bg);
 }
+/* Faint red glow at the top of the page in dark mode */
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, rgba(163, 16, 26, 0.25), transparent 60%),
+    linear-gradient(180deg, #151414, #0e0e0e);
+  background-attachment: fixed;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.5rem;
-  font-weight: 300;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 1.2;
   color: var(--text);
   scroll-margin-top: 66px;
@@ -125,8 +145,8 @@ blockquote {
   margin: 1.5em 0;
   padding: 1em;
   font-size: 1.2rem;
-  background: var(--bg);
-  border-left: 5px solid var(--theme);
+  background: var(--card-bg);
+  border-left: 5px solid var(--gold);
 }
 blockquote p {
   margin-bottom: 0;
@@ -162,39 +182,46 @@ main.container {
   font-weight: 700;
 }
 
+/* Red plate with a gold bottom edge */
 .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
-  font-size: 75%;
+  font-family: var(--heading-font);
+  font-size: 80%;
   font-weight: 700;
+  letter-spacing: 0.08em;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
-  border-radius: 0.25rem;
-  color: var(--card-bg);
-  background-color: var(--theme);
+  border-radius: 0;
+  border-bottom: 2px solid var(--gold);
+  color: var(--plate-text);
+  background: linear-gradient(180deg, var(--plate-2), var(--plate));
 }
 
 .btn {
   display: inline-block;
   margin: 0.375rem 0.375rem 0.375rem 0;
   padding: 0.25rem 1rem;
-  font-size: 0.64rem;
-  font-weight: 400;
+  font-family: var(--heading-font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
-  color: var(--text);
+  color: var(--theme);
   background: transparent;
-  border: 1px solid var(--text);
-  border-radius: 0.125rem;
+  border: 1px solid var(--theme);
+  border-radius: 0;
   cursor: pointer;
   user-select: none;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color 0.15s, background-color 0.15s;
 }
 .btn:hover {
-  color: var(--theme);
-  border-color: var(--theme);
+  color: #ffffff;
+  background-color: var(--theme);
   text-decoration: none;
 }
 
@@ -206,9 +233,10 @@ main.container {
   right: 0;
   z-index: 1030;
   padding: 0.5rem 1rem;
-  background-color: var(--bg);
-  border-bottom: 1px solid var(--divider);
-  opacity: 0.95;
+  font-family: var(--heading-font);
+  background: linear-gradient(180deg, var(--plate-2), var(--plate));
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.5);
 }
 .navbar > .container {
   display: flex;
@@ -224,12 +252,14 @@ main.container {
   margin-right: 1rem;
   padding: 0.3125rem 0;
   font-size: 1.25rem;
-  font-weight: lighter;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   white-space: nowrap;
-  color: var(--text);
+  color: var(--plate-text);
 }
 .navbar-brand:hover {
-  color: var(--text);
+  color: #ffffff;
 }
 
 .navbar-collapse {
@@ -251,14 +281,21 @@ main.container {
 .nav-link {
   display: block;
   padding: 0.5rem;
-  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--plate-text);
 }
 .nav-link:hover {
-  color: var(--hover);
+  color: #ffffff;
 }
 .nav-item.active > .nav-link {
-  font-weight: bolder;
-  color: var(--theme);
+  color: #ffd77a;
+  text-shadow: 0 0 12px rgba(231, 181, 65, 0.5);
+}
+html[data-theme="dark"] .nav-item.active > .nav-link {
+  color: var(--gold);
 }
 
 #search-toggle,
@@ -266,11 +303,11 @@ main.container {
   padding: 0;
   border: 0;
   background-color: inherit;
-  color: var(--text);
+  color: var(--plate-text);
   cursor: pointer;
 }
 #search-toggle:hover .nav-link {
-  color: var(--hover);
+  color: #ffffff;
 }
 
 #light-toggle {
@@ -281,7 +318,7 @@ main.container {
   height: 2rem;
 }
 #light-toggle:hover {
-  color: var(--hover);
+  color: #ffffff;
 }
 
 /* Show the icon matching the current theme setting */
@@ -310,7 +347,7 @@ html[data-theme-setting="light"] #light-toggle-light { display: inline-block; }
   line-height: 1em;
   text-align: center;
   font: var(--fa-font);
-  color: var(--text);
+  color: var(--plate-text);
 }
 .fa-half-sun-moon::before {
   content: "\f111"; /* left half: filled circle */
@@ -324,7 +361,7 @@ html[data-theme-setting="light"] #light-toggle-light { display: inline-block; }
 }
 #light-toggle:hover .fa-half-sun-moon::before,
 #light-toggle:hover .fa-half-sun-moon::after {
-  color: var(--theme);
+  color: #ffffff;
 }
 
 /* Hamburger button (only on small screens) */
@@ -344,7 +381,7 @@ html[data-theme-setting="light"] #light-toggle-light { display: inline-block; }
   height: 2px;
   margin-bottom: 4px;
   border-radius: 1px;
-  background-color: var(--text);
+  background-color: var(--plate-text);
   transition: all 0.2s;
 }
 .navbar-toggler .top-bar { transform: rotate(45deg); transform-origin: 10% 10%; }
@@ -365,19 +402,27 @@ progress {
   appearance: none;
   border: none;
   background-color: transparent;
-  color: var(--theme);
+  color: var(--gold);
 }
 progress::-webkit-progress-bar { background-color: transparent; }
-progress::-webkit-progress-value { background-color: var(--theme); }
-progress::-moz-progress-bar { background-color: var(--theme); }
+progress::-webkit-progress-value { background-color: var(--gold); }
+progress::-moz-progress-bar { background-color: var(--gold); }
 
 /* 5. Page header ------------------------------------------------------------- */
 .post-header .post-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.post-title .bold {
+  color: var(--theme);
 }
 .post-header .desc {
   margin: 0.75rem 0 1.5rem;
-  font-size: 0.875rem;
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   line-height: 1.4;
   color: var(--text-light);
 }
@@ -392,11 +437,18 @@ progress::-moz-progress-bar { background-color: var(--theme); }
   width: 30%;
   margin-left: 1rem;
 }
+/* Angular faceplate cut with a gold trim */
+.profile figure,
+.profile img {
+  clip-path: polygon(14% 0, 86% 0, 100% 10%, 100% 90%, 86% 100%, 14% 100%, 0 90%, 0 10%);
+}
+.profile figure {
+  padding: 4px;
+  background: linear-gradient(135deg, var(--gold), #f3d58a 40%, var(--gold) 60%, #7a5410);
+}
 .profile img {
   width: 100%;
   height: auto;
-  border-radius: 0.25rem;
-  box-shadow: var(--shadow);
 }
 .clearfix::after {
   content: "";
@@ -404,11 +456,26 @@ progress::-moz-progress-bar { background-color: var(--theme); }
   clear: both;
 }
 
-/* Section headings (news, latest posts, selected publications) */
+/* Section headings (news, latest posts, selected publications), topped by a
+ * red-gold "panel line" */
 .section-title {
+  position: relative;
   margin-top: 2.25rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--section-divider);
+  padding-top: 1.25rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.section-title::before,
+.cv-section-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--theme) 0 18%, var(--gold) 18% 22%, var(--section-divider) 22%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 1% 100%);
 }
 .section-title a {
   color: inherit;
@@ -434,7 +501,14 @@ progress::-moz-progress-bar { background-color: var(--theme); }
 }
 .news-table th {
   width: 20%;
+  font-family: var(--heading-font);
   font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--theme);
+}
+.news-table tr + tr th,
+.news-table tr + tr td {
+  border-top: 1px solid var(--divider);
 }
 
 /* 7. Publications ------------------------------------------------------------ */
@@ -454,8 +528,14 @@ progress::-moz-progress-bar { background-color: var(--theme); }
   margin-top: 0;
   padding: 0;
 }
+/* Each paper is a plated card with a clipped corner */
 .bibliography > li {
   margin-bottom: 1rem;
+  padding: 1rem 1.1rem;
+  background: var(--card-bg);
+  border-left: 4px solid var(--theme);
+  box-shadow: var(--shadow);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
 }
 .pub {
   display: flex;
@@ -492,7 +572,7 @@ progress::-moz-progress-bar { background-color: var(--theme); }
   overflow: hidden;
   font-size: 0.875rem;
   text-align: justify;
-  border: 1px dashed var(--bg);
+  border: 1px dashed transparent;
   transition: all 0.15s ease;
 }
 .pub .abstract.open {
@@ -532,10 +612,10 @@ progress::-moz-progress-bar { background-color: var(--theme); }
   font-size: 4rem;
 }
 .social .contact-icons a {
-  color: var(--text);
+  color: var(--theme);
 }
 .social .contact-icons a:hover {
-  color: var(--theme);
+  color: var(--gold);
   text-decoration: none;
 }
 .social .contact-note {
@@ -551,6 +631,11 @@ progress::-moz-progress-bar { background-color: var(--theme); }
 .header-bar h1 {
   font-size: 5rem;
   color: var(--theme);
+}
+.header-bar h2 {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0;
 }
 
 .tag-category-list {
@@ -626,7 +711,8 @@ progress::-moz-progress-bar { background-color: var(--theme); }
   font-size: clamp(2.35rem, 5vw, 3.6rem);
   font-weight: 700;
   line-height: 1.05;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
+  text-transform: none; /* long titles read better in mixed case */
 }
 .blog-description {
   max-width: 760px;
@@ -775,9 +861,12 @@ progress::-moz-progress-bar { background-color: var(--theme); }
 }
 /* Same look as the home page section headings */
 .cv-section-title {
+  position: relative;
   margin: 3rem 0 1.25rem;
-  font-size: 2rem;
-  font-weight: 300;
+  padding-top: 1.25rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .cv-section-title:first-child {
   margin-top: 0.5rem;

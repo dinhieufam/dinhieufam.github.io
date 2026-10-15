@@ -8,6 +8,7 @@ Static personal website (plain HTML/CSS/JS), served as-is by GitHub Pages from `
 - `assets/js/data.js` holds all repeated content: `SITE`, `NEWS`, `BLOG_TAGS`/`BLOG_CATEGORIES`, `POSTS`, `PUBLICATIONS`, `CV`. Lists are newest-first.
 - `assets/js/site.js` injects the navbar (`NAV`), handles theme/search/progress bar/back-to-top/TOC/abstract toggles, and fills every element with a `data-render="..."` attribute from `data.js`.
 - `assets/css/style.css` is the only stylesheet. Colors are CSS variables at the top, with a `html[data-theme="dark"]` override block.
+- `assets/css/style.original.css` is a backup of the theme before "Mark III". No page loads it; don't edit it.
 - `assets/js/vendor/ninja-keys.min.js` is a vendored, bundled ctrl-k palette. Don't edit it.
 - Blog post bodies are hand-written HTML inside `<article class="post-content">`. The post header comes from the matching `POSTS` entry, matched by `url`.
 
