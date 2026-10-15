@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why Everyone Is Talking About World Models — Thoughts From Someone Without 100,000 GPUs | Hieu Pham Dinh</title>
+    <meta name="author" content="Hieu Pham Dinh" />
+    <meta
+      name="description"
+      content="A personal take on the rise of world models, why frontier labs are investing in them, and where smaller teams can still build meaningful things."
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/site.js"></script>
+    <script type="module" src="/assets/js/vendor/ninja-keys.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+  </head>
+
+  <body>
+    <main class="container with-toc">
+      <div class="toc-column"><nav id="toc-sidebar" aria-label="Table of contents"></nav></div>
+
+      <div class="content-column">
+        <!-- Title, description, date and tags come from this post's entry in POSTS (assets/js/data.js) -->
+        <header class="post-header blog-hero" data-render="post-header"></header>
+
+        <article class="post-content">
+          <p>Over the past few months, I have noticed a shift in conversations about AI.</p>
+          <p>A year or two ago, everyone seemed to be talking about larger language models: more parameters, more tokens, and more benchmarks. Today, it feels like everyone is talking about <strong>world models</strong>.</p>
+          <p>Every week brings new papers, startups, and research directions built around the idea that AI should not merely process descriptions of reality, but develop some internal representation of how reality behaves.</p>
+          <p>At first, I found the excitement a little confusing. Language models already feel magical. They can write code, answer questions, summarize books, and help design software. Why is the industry suddenly obsessed with something else?</p>
+          <p>The more I read, the more I think the appeal comes down to a simple distinction:</p>
+          <blockquote>
+            <p>Language models primarily learn from descriptions of the world. World models aim to learn how the world changes.</p>
+          </blockquote>
+          <p>That is a much bigger ambition.</p>
+          <blockquote>
+            <p>A note on terminology: “world model” is a broad and sometimes loosely used term. Here, I mean a model that learns representations of an environment, predicts how it may evolve, and helps an agent reason about the consequences of actions.</p>
+          </blockquote>
+          <h2 id="the-dream-generating-futures-not-just-words">The dream: generating futures, not just words</h2>
+          <p>Imagine asking an AI:</p>
+          <blockquote>
+            <p>What is likely to happen if I make this business decision?</p>
+          </blockquote>
+          <p>Or:</p>
+          <blockquote>
+            <p>What happens if this robot takes two steps forward and pushes that object?</p>
+          </blockquote>
+          <p>Or:</p>
+          <blockquote>
+            <p>What are the likely outcomes of this scientific experiment?</p>
+          </blockquote>
+          <p>Current language models can produce plausible answers, often by drawing on patterns expressed in their training data. A world model aims to do something deeper: form an internal representation of a situation, simulate possible transitions, and predict what may happen next.</p>
+          <p>In that sense, it is less about generating words and more about generating futures.</p>
+          <p>If language models are autocomplete for text, world models aspire to become autocomplete for reality.</p>
+          <h2 id="why-frontier-labs-care-so-much">Why frontier labs care so much</h2>
+          <p>I see two main reasons.</p>
+          <h3 id="capability">Capability</h3>
+          <p>Many of the hardest AI problems require understanding how actions lead to consequences:</p>
+          <ul>
+            <li>robotics;</li>
+            <li>autonomous driving;</li>
+            <li>scientific discovery;</li>
+            <li>embodied agents; and</li>
+            <li>long-horizon planning.</li>
+          </ul>
+          <p>These problems are difficult because the model must reason about environments that change over time. Producing convincing language is not enough. An effective system needs to anticipate motion, uncertainty, interaction, failure, and the downstream effects of its own decisions.</p>
+          <h3 id="data-and-scaling">Data and scaling</h3>
+          <p>The supply of high-quality human-written text is large but not unlimited. As language models consume more of it, simply adding more text and computation may deliver diminishing returns.</p>
+          <p>The physical and digital worlds, however, continuously produce new signals: videos, interactions, sensor readings, experiments, simulations, and human behavior. These sources are not automatically useful—collecting and curating them is difficult—but they offer a training signal far richer than text alone.</p>
+          <p>From the perspective of a frontier lab, learning from those signals is an obvious direction to explore.</p>
+          <h2 id="the-part-that-makes-me-uneasy">The part that makes me uneasy</h2>
+          <p>Whenever I read about world models, I get excited.</p>
+          <p>Then I remember who is building them.</p>
+          <p>The organizations leading this race have access to resources that most people can barely imagine: massive GPU clusters, proprietary datasets, specialized research teams, robot fleets, and vehicles collecting data every second.</p>
+          <p>When I see a paper trained on millions of video clips or a system requiring enormous computational resources, I sometimes wonder: <strong>what does this mean for the rest of us?</strong></p>
+          <p>Independent developers, hobbyists, students, university labs, and small startups are not operating on the same playing field. That is not necessarily a reason to give up, but it should change how we think about participating in the future of AI.</p>
+          <h2 id="we-probably-will-not-train-the-next-frontier-world-model">We probably will not train the next frontier world model</h2>
+          <p>This is something I have gradually accepted.</p>
+          <p>I probably will not train the next frontier world model. Most people reading this probably will not either.</p>
+          <p>That is not because we are less capable. The economics are simply different.</p>
+          <p>The cost of collecting data, running experiments, and training these systems is becoming concentrated among a small number of organizations. The gap between <strong>using AI</strong>, <strong>researching AI</strong>, and <strong>building frontier foundation models</strong> continues to grow.</p>
+          <p>Sometimes, I think people underestimate how much those distinctions matter. Reading a paper and reproducing it are very different tasks. Reproducing it and competing with the original lab are further apart still.</p>
+          <h2 id="but-history-gives-me-hope">But history gives me hope</h2>
+          <p>Fortunately, this pattern is not unique to AI.</p>
+          <p>The organizations that built internet infrastructure were not the only ones that created value on top of it. Smartphone manufacturers were not the only winners of the mobile revolution. Most successful software companies do not build operating systems; they build products using them.</p>
+          <p>I suspect something similar will happen with world models.</p>
+          <p>The foundational layer may belong to a relatively small number of organizations. The opportunity layer above it could be much larger.</p>
+          <p>That is where most builders can contribute.</p>
+          <h2 id="where-small-teams-still-matter">Where small teams still matter</h2>
+          <p>If I were starting something today, I would not try to compete directly with the largest AI labs. I would look for leverage instead.</p>
+          <ul>
+            <li>Can I build better tools around these models?</li>
+            <li>Can I adapt them to a domain the foundation-model lab does not understand deeply?</li>
+            <li>Can I create a workflow that makes the technology reliable and useful?</li>
+            <li>Can I solve a real problem for a specific group of users?</li>
+            <li>Can I evaluate these systems more honestly or make them safer to deploy?</li>
+          </ul>
+          <p>Small teams can often move faster, understand narrow problems better, and stay closer to users. They may not own the foundational model, but they can still own the context, interface, data pipeline, evaluation process, or product that makes the model valuable.</p>
+          <p>The headlines focus on the models. The opportunities often emerge somewhere else.</p>
+          <h2 id="my-current-take">My current take</h2>
+          <p>I think world models matter. They are likely to play an important role in more capable robots, agents, and decision-making systems.</p>
+          <p>I also think they are surrounded by a great deal of hype.</p>
+          <p>Building a model that genuinely understands reality is an extraordinarily difficult problem. The real world is messy. Humans are unpredictable. Physics is complicated. Observations are incomplete. Context matters. Unlike a language benchmark, reality rarely provides a clean score telling us whether a model truly understands what is happening.</p>
+          <p>So I am watching the race with interest, but I am not losing sleep trying to join it at the infrastructure level. I am more interested in understanding where these technologies are heading, what they will make possible, and how smaller builders can use them thoughtfully.</p>
+          <p>If previous technology waves teach us anything, it is this:</p>
+          <blockquote>
+            <p>You do not have to build the foundation to build something meaningful on top of it.</p>
+          </blockquote>
+          <p>For most of us, that may be where the most interesting opportunities are anyway.</p>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

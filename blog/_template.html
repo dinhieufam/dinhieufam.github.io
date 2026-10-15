@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post title | Hieu Pham Dinh</title>
+    <meta name="author" content="Hieu Pham Dinh" />
+    <meta
+      name="description"
+      content="One-sentence summary of the post."
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/site.js"></script>
+    <script type="module" src="/assets/js/vendor/ninja-keys.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+  </head>
+
+  <body>
+    <!--
+      NEW POST — how to use this template:
+        1. Copy this file to blog/<year>/<post-name>/index.html
+        2. Change the <title> and description above.
+        3. Add an entry for the post at the TOP of POSTS in assets/js/data.js
+           (its "url" must be "/blog/<year>/<post-name>/").
+        4. Write the article below with normal HTML tags:
+           <p>, <h2>, <h3>, <ul><li>, <blockquote>, <strong>, <a href="">, <img src="">
+           <p class="callout">...</p> gives a big highlighted paragraph.
+        The "Contents" sidebar is built automatically from your <h2>/<h3> headings.
+    -->
+    <main class="container with-toc">
+      <div class="toc-column"><nav id="toc-sidebar" aria-label="Table of contents"></nav></div>
+
+      <div class="content-column">
+        <!-- Title, description, date and tags come from this post's entry in POSTS (assets/js/data.js) -->
+        <header class="post-header blog-hero" data-render="post-header"></header>
+
+        <article class="post-content">
+          <p>First paragraph of the post.</p>
+
+          <h2>A section heading</h2>
+          <p>Some text with <strong>bold</strong> and a <a href="https://example.com">link</a>.</p>
+
+          <blockquote>
+            <p>A quote.</p>
+          </blockquote>
+
+          <h3>A sub-section</h3>
+          <ul>
+            <li>a list item;</li>
+            <li>another item.</li>
+          </ul>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
