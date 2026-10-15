@@ -262,33 +262,20 @@ const renderers = {
       <p class="post-tags blog-tags">${postTagsHtml(p)}</p>`;
   },
 
-  // Whole CV page
+  // Whole CV page: a heading + a dated list for each section in CV
   cv(el) {
-    const row = (badge, body) => `
+    const item = (it) => `
       <li class="cv-item">
-        <div class="cv-date"><span class="badge">${badge}</span></div>
-        <div class="cv-body">${body}</div>
+        <div class="cv-date">${it.dates}</div>
+        <div class="cv-body">
+          <h3 class="cv-title">${it.url ? `<a href="${it.url}">${it.title}</a>` : it.title}</h3>
+          ${it.subtitle ? `<p class="cv-subtitle">${it.subtitle}</p>` : ""}
+          ${it.text ? `<p class="cv-text">${it.text}</p>` : ""}
+        </div>
       </li>`;
-    const sections = CV.sections.map((s) => {
-      const items = s.items.map((it) =>
-        row(
-          it.dates,
-          `<h6 class="cv-title">${it.url ? `<a href="${it.url}">${it.title}</a>` : it.title}</h6>
-           ${it.subtitle ? `<h6 class="cv-subtitle">${it.subtitle}</h6>` : ""}
-           ${it.bullets ? `<ul class="items">${it.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : ""}
-           ${it.text ? `<p>${it.text}</p>` : ""}`
-        )
-      );
-      return card(s.title, `<ul class="cv-list">${items.join("")}</ul>`);
-    });
-    function card(title, body) {
-      return `<div class="card"><h3 class="card-title">${title}</h3>${body}</div>`;
-    }
-    el.innerHTML = [
-      card("Contact Information", `<table class="cv-contact">${CV.contact.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${v}</td></tr>`).join("")}</table>`),
-      card("Professional Summary", `<p>${CV.summary}</p>`),
-      ...sections,
-    ].join("");
+    el.innerHTML = CV.map(
+      (s) => `<h2 class="cv-section-title">${s.title}</h2><ul class="cv-list${s.compact ? " compact" : ""}">${s.items.map(item).join("")}</ul>`
+    ).join("");
   },
 };
 
@@ -446,12 +433,23 @@ function setupZoom() {
   }
 }
 
+// Links to other websites open in a new tab
+function setupExternalLinks() {
+  document.querySelectorAll("a[href^='http']").forEach((a) => {
+    if (a.hostname !== location.hostname) {
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+    }
+  });
+}
+
 /* ---------------------------------------------------------------------------
  * 8. Start everything once the page has loaded
  * ------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   renderHeader();
   document.querySelectorAll("[data-render]").forEach((el) => renderers[el.dataset.render](el));
+  setupExternalLinks();
   setupProgressBar();
   setupBackToTop();
   setupAbstracts();

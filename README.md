@@ -25,7 +25,6 @@ assets/js/data.js             ← news, publications, blog list, CV (edit this m
 assets/js/site.js             Navbar, dark mode, search, rendering (rarely needs edits)
 assets/css/style.css          All styles (colors at the top)
 assets/img/                   Profile photo, publication preview images
-assets/pdf/Academic_CV.pdf    CV PDF linked from the CV page
 ```
 
 ## Common edits
@@ -36,7 +35,7 @@ assets/pdf/Academic_CV.pdf    CV PDF linked from the CV page
 | Add a news item                    | add `{ date, text }` at the top of `NEWS` in `assets/js/data.js`                         |
 | Add a paper                        | add an entry at the top of `PUBLICATIONS` in `data.js` (`selected: true` shows it on home) |
 | Add a paper preview image          | put the image in `assets/img/publication_preview/` and set `preview: "file.jpg"`         |
-| Update the CV                      | `CV` in `data.js`; replace `assets/pdf/Academic_CV.pdf` for the PDF                      |
+| Update the CV                      | `CV` in `data.js` (Education, Experience, Awards & Honors, Service & Teaching)           |
 | Change email / GitHub / LinkedIn   | `SITE` in `data.js`                                                                      |
 | Change the menu                    | `NAV` at the top of `assets/js/site.js`                                                  |
 | Change the accent color            | `--theme` / `--hover` at the top of `assets/css/style.css`                               |

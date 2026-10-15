@@ -385,9 +385,6 @@ progress::-moz-progress-bar { background-color: var(--theme); }
   margin-bottom: 2rem;
   font-size: 0.875rem;
 }
-.post-header .pdf-link {
-  float: right;
-}
 
 /* 6. Home page --------------------------------------------------------------- */
 .profile {
@@ -776,81 +773,69 @@ progress::-moz-progress-bar { background-color: var(--theme); }
 .cv {
   margin-bottom: 40px;
 }
-.cv .card {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: var(--card-bg);
-  border: 1px solid var(--divider);
-  border-radius: 0.25rem;
-  box-shadow: var(--shadow);
-}
-.cv .card-title {
-  margin-bottom: 0.75rem;
+/* Same look as the home page section headings */
+.cv-section-title {
+  margin: 3rem 0 1.25rem;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 300;
 }
-.cv .card > p {
-  margin-bottom: 1rem;
-}
-
-.cv-contact {
-  width: 100%;
-  margin-bottom: 1rem;
-  border-collapse: collapse;
-}
-.cv-contact td {
-  padding: 1px;
-}
-.cv-contact td:first-child {
-  font-weight: 700;
-}
-
-.cv-list {
-  margin: 0 0 1rem;
-  padding-left: 40px;
-  list-style: none;
-  font-size: 0.9rem;
-  font-weight: 400;
-}
-.cv-item {
-  display: flex;
-  margin: 0 -15px;
-}
-.cv-date {
-  flex: 0 0 16.6667%;
-  min-width: 0;
-  padding: 0.5rem 15px 0;
-}
-.cv-date .badge {
-  min-width: 92px;
-  padding: 0.3rem 0.7rem;
-  font-size: 0.8rem;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-.cv-body {
-  flex: 0 0 83.3333%;
-  padding: 0 15px;
+.cv-section-title:first-child {
   margin-top: 0.5rem;
 }
-.cv-title,
-.cv-title a {
-  margin-left: 1.5rem;
-  font-weight: 700;
-  color: var(--theme);
+.cv-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-item {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  column-gap: 40px;
+  border-top: 1px solid var(--divider);
+  padding: 1rem 0 1.25rem;
+}
+.cv-list .cv-item:last-child {
+  border-bottom: 1px solid var(--divider);
+}
+/* Left column: grey monospace dates */
+.cv-date {
+  padding-top: 0.1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-light);
+}
+/* Right column: title, grey subtitle, short description */
+.cv-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
 .cv-title a {
-  margin-left: 0;
+  color: inherit;
+}
+.cv-title a:hover {
+  color: var(--theme);
+  text-decoration: none;
 }
 .cv-subtitle {
-  margin-left: 1.5rem;
-  font-size: 0.95rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.875rem;
+  color: var(--text-light);
 }
-.cv-body > p {
-  margin-left: 1.5rem;
+.cv-text {
+  margin: 0;
 }
-.cv-body .items {
-  list-style: circle;
+
+/* Compact sections (Awards & Honors, Service & Teaching): one line per row */
+.cv-list.compact .cv-item {
+  padding: 0.6rem 0;
+}
+.cv-list.compact .cv-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 /* 14. Back-to-top & search palette ------------------------------------------ */
@@ -899,11 +884,6 @@ ninja-keys::part(ninja-input-wrapper) {
 
 /* 15. Small screens ---------------------------------------------------------- */
 @media (max-width: 767.98px) {
-  .cv-title,
-  .cv-subtitle,
-  .cv-body > p {
-    margin-left: 0;
-  }
   .blog-metadata {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -942,15 +922,17 @@ ninja-keys::part(ninja-input-wrapper) {
     margin-left: 0;
   }
 
-  .pub,
-  .cv-item {
+  .pub {
     flex-direction: column;
     gap: 0;
   }
   .pub-abbr,
-  .pub-body,
-  .cv-date,
-  .cv-body {
+  .pub-body {
     flex-basis: auto;
+  }
+
+  /* CV: dates sit above each entry */
+  .cv-item {
+    grid-template-columns: 1fr;
   }
 }
